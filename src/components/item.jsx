@@ -1,0 +1,3 @@
+function ProductCard(props) {
+  return <></>;
+}
