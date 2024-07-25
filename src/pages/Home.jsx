@@ -6,6 +6,7 @@ function Home() {
   const [products, setProduct] = useState([]);
   useEffect(() => {
     fetchCall();
+    
   }, []);
   const fetchCall = async () => {
     const response = await axios.get(`http://localhost:3000/post`);
