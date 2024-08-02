@@ -1,20 +1,25 @@
 import { useState } from "react";
 
-import { deposit,numberOfUPdate } from "../redux/customers/customerSlice";
+import { deposit,numberOfUPdates } from "../redux/customers/customerSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 function Contact() {
-  const [username, setUsername] = useState("");
+  // const [username, setUsername] = useState("");
   const [balance, setbalance] = useState("");
 
-  const store = useSelector((store) => store.customer.numberOfUPdate);
-  console.log(store)
+  const {numberOfUPdate,currency,isLoading} = useSelector((store) => store.customer);
+
   const dipatch = useDispatch();
   const handleSubmit = () => {
-    dipatch(numberOfUPdate());
+    console.log("handle Balance: ",balance);
+    dipatch(numberOfUPdates(balance,"GBP"));
+    
   };
   return (
     <div>
+      <p>Loading: {isLoading ? "loading": "false"}</p>
+      <p>Balance: {balance}</p>
+     <p> {numberOfUPdate}: {currency}</p>
       <div className="w-72">
         <input
           type="number"
@@ -29,10 +34,10 @@ function Contact() {
         type="button"
         onClick={handleSubmit}
         className="mt-4 px-3 py-2 bg-red-500 text-white rounded-md focus:ring-2 dark:hover:bg-red-600 focus:outline-none"
-      >
+      disabled={isLoading}>
         Submit
       </button>
-      {store > 0 ? store : ""}
+      {numberOfUPdate > 0 ? numberOfUPdate : "store"}
     </div>
   );
 }
