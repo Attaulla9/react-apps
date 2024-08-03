@@ -9,7 +9,6 @@ export default function productsReducer(
   state = PRODUCTS_INITIAL_STATE,
   action
 ) {
-
   switch (action.type) {
     case "products/items":
       return { ...state, products: [...action.payload] };

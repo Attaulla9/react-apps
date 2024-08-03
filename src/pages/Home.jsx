@@ -8,7 +8,6 @@ function Home() {
   const [products, setProduct] = useState([]);
   const store = useSelector((store) => store.products);
   const dispatch = useDispatch();
-  console.log("items: ", store);
   useEffect(() => {
     fetchCall();
   }, []);

@@ -8,11 +8,9 @@ export default function MultiInputForm() {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(formData);
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,

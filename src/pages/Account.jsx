@@ -26,7 +26,6 @@ const Account = () => {
 
   const handleerSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
   };
 
   return (

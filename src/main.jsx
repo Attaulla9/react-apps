@@ -6,10 +6,6 @@ import Store from "./redux/store.js"
 import App from "./App.jsx";
 import "./index.css";
 
-// Store.dispatch({type: "account/createAccount",payload : {fullName: "Afnan Faniband",nationId: "21918272",
-//   createdAt: new Date().toISOString()}})
-// console.log(Store.getState())
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>

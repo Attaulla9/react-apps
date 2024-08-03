@@ -1,18 +1,18 @@
 import { useState } from "react";
 
-import { deposit,numberOfUPdates } from "../redux/customers/customerSlice";
+import { update } from "../redux/customers/customerSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 function Contact() {
-  // const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [balance, setbalance] = useState("");
 
   const {numberOfUPdate,currency,isLoading} = useSelector((store) => store.customer);
 
   const dipatch = useDispatch();
   const handleSubmit = () => {
-    console.log("handle Balance: ",balance);
-    dipatch(numberOfUPdates(balance,"GBP"));
+    dipatch(update(balance,"INR"));
+    
     
   };
   return (
